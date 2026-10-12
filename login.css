@@ -1,0 +1,268 @@
+/* =====================================================================
+   BARE BEAUTY INVENTORY MANAGEMENT SYSTEM (IMS)
+   Login Screen, Lipstick Swatches & Keyframe Animations
+   ===================================================================== */
+
+.login-view {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline: max(0px, calc((100% - 1240px) / 2));
+  background: linear-gradient(118deg, #fffafa 0%, var(--page) 42%, #ffd9e2 100%);
+}
+
+.login-view::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .07;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.swatch-defs {
+  position: absolute;
+}
+
+/* Left: Lipstick Swatches Panel */
+.swatch-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  padding: 36px clamp(28px, 5vw, 64px);
+}
+
+.swatch-panel > * {
+  position: relative;
+}
+
+.swatch-panel, .login-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.swatch-brand img {
+  display: block;
+  width: 128px;
+  height: auto;
+}
+
+.swatch-intro h2 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font: 700 clamp(2.3rem, 3.2vw, 3.2rem)/1.02 var(--display);
+  letter-spacing: -.01em;
+}
+
+.swatch-intro p {
+  max-width: 380px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.swatch-list {
+  display: grid;
+  gap: 8px;
+  width: clamp(240px, calc((100vh - 400px) * 1.45), min(500px, 100%));
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+
+.swatch {
+  position: relative;
+  transition: transform .25s ease;
+}
+
+.swatch:nth-child(even) {
+  margin-left: 28px;
+}
+
+.swatch:hover {
+  transform: translateX(8px);
+}
+
+.swatch svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 6px 6px #8f142530);
+}
+
+.swatch-gloss {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: .28;
+  filter: url(#swatchRough);
+}
+
+.swatch-name {
+  position: absolute;
+  left: 11%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px #3a0d1655;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.swatch-light .swatch-name {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+/* Right: Sign-In Form Panel */
+.login-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 64px;
+}
+
+.login-copy {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.login-box {
+  width: min(500px, 100%);
+  padding: 38px 36px 30px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: 0 7px 24px #8f142510;
+}
+
+.login-mark {
+  display: block;
+  width: 52px;
+  height: auto;
+  margin-bottom: 26px;
+}
+
+.login-box h1 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font: 700 2.8rem/1.05 var(--display);
+  letter-spacing: -.01em;
+}
+
+.login-lead {
+  margin: 0 0 28px;
+  line-height: 1.55;
+}
+
+.login-box .button.primary {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 6px;
+  font-size: 1rem;
+  letter-spacing: .02em;
+}
+
+.login-box .button.primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.login-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 22px 0 0;
+}
+
+.note-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.login-box input {
+  background: #ffffff;
+}
+
+/* Login Entrance Animations */
+.login-view .swatch {
+  animation: swatch-in 1s cubic-bezier(.65, 0, .35, 1) backwards;
+}
+
+.login-view .swatch:nth-child(1) { animation-delay: .1s; }
+.login-view .swatch:nth-child(2) { animation-delay: .3s; }
+.login-view .swatch:nth-child(3) { animation-delay: .5s; }
+.login-view .swatch:nth-child(4) { animation-delay: .7s; }
+
+.login-view .login-box > * {
+  animation: rise .7s ease backwards;
+}
+
+.login-view .login-box > :nth-child(1) { animation-delay: .1s; }
+.login-view .login-box > :nth-child(2) { animation-delay: .18s; }
+.login-view .login-box > :nth-child(3) { animation-delay: .26s; }
+.login-view .login-box > :nth-child(4) { animation-delay: .34s; }
+.login-view .login-box > :nth-child(5) { animation-delay: .42s; }
+.login-view .login-box > :nth-child(6) { animation-delay: .5s; }
+
+@keyframes swatch-in {
+  from { clip-path: inset(-20% 100% -20% 0); }
+  to { clip-path: inset(-20% -5% -20% 0); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+/* Responsive Login Breakpoints */
+@media (min-width: 1700px) and (min-height: 800px) {
+  .login-view { padding-inline: max(0px, calc((100% - 1500px) / 2)); }
+  .swatch-brand img { width: 160px; }
+  .swatch-intro h2 { font-size: 3.9rem; }
+  .swatch-intro p { max-width: 460px; font-size: 1.1rem; }
+  .swatch-list { width: clamp(240px, calc((100vh - 430px) * 1.45), min(640px, 100%)); }
+  .swatch-name { font-size: .9rem; }
+  .login-box { width: min(580px, 100%); padding: 48px 46px 38px; }
+  .login-mark { width: 64px; }
+  .login-box h1 { font-size: 3.5rem; }
+  .login-lead { font-size: 1.1rem; }
+  .login-box label { font-size: 1rem; }
+  .login-box input { height: 54px; font-size: 1.05rem; }
+  .field-icon { top: 18px; }
+  .toggle-password { top: 9px; height: 36px; }
+  .login-box .button.primary { min-height: 56px; font-size: 1.1rem; }
+  .login-note, .login-copy { font-size: .9rem; }
+}
+
+@media (max-height: 700px) {
+  .swatch-intro p { display: none; }
+  .swatch-list { width: clamp(240px, calc((100vh - 335px) * 1.45), min(500px, 100%)); }
+}
+
+@media (max-width: 860px) {
+  .login-view { grid-template-columns: 1fr; }
+  .swatch-panel { gap: 12px; align-items: center; padding: 26px 24px 8px; }
+  .swatch-brand { align-self: center; }
+  .swatch-intro { display: none; }
+  .swatch-list { width: min(420px, 100%); gap: 4px; transform-origin: center; }
+  .swatch:nth-child(n+4) { display: none; }
+  .login-panel { align-items: flex-start; padding: 28px 18px 70px; }
+  .login-box { padding: 30px 24px 26px; }
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bare Beauty Stock Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&display=swap" />
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <!-- ========================================== -->
+    <!-- 1. LOGIN VIEW                              -->
+    <!-- ========================================== -->
+    <div id="loginView" class="login-view">
+      <!-- SVG Swatch Roughness Displacement Filter -->
+      <svg class="swatch-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+          <filter id="swatchRough" x="-5%" y="-20%" width="110%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.035 0.09" numOctaves="2" seed="4" result="n" />
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="7" />
+          </filter>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#982736" /><stop offset="1" stop-color="#811323" /></linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ba5e6d" /><stop offset="1" stop-color="#a04554" /></linearGradient>
+          <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dd94a2" /><stop offset="1" stop-color="#c07785" /></linearGradient>
+          <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcbd8" /><stop offset="1" stop-color="#dfa9b6" /></linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Left Swatch Showcase Panel -->
+      <aside class="swatch-panel">
+        <div class="swatch-brand">
+          <img src="./assets/images/1removebg.png" alt="Bare Beauty" />
+        </div>
+        <div class="swatch-intro">
+          <h2>Every shade,<br />accounted for.</h2>
+          <p>Track stock, shipments and replenishment for the Bare Beauty collection in one place.</p>
+        </div>
+        <ul class="swatch-list" aria-hidden="true">
+          <li class="swatch">
+            <svg viewBox="0 0 460 78" aria-hidden="true">
+              <path d="M14 44 C10 20 40 10 96 14 C170 20 250 8 340 12 C400 14 440 12 448 30 C456 48 436 64 392 64 C320 66 250 60 170 64 C100 68 50 70 28 62 C16 58 15 52 14 44 Z" fill="url(#g1)" filter="url(#swatchRough)" />
+              <path d="M44 26 C120 20 230 24 330 22 C380 21 410 22 428 28" class="swatch-gloss" />
+            </svg>
+            <span class="swatch-name">Plush · Brick</span>
+          </li>
+          <li class="swatch">
+            <svg viewBox="0 0 460 78" aria-hidden="true">
+              <path d="M20 40 C14 22 46 14 110 18 C190 24 270 10 350 16 C410 20 452 20 450 36 C448 52 428 60 380 62 C300 66 230 58 150 62 C90 66 40 66 24 56 C18 52 21 46 20 40 Z" fill="url(#g2)" filter="url(#swatchRough)" />
+              <path d="M44 26 C120 20 230 24 330 22 C380 21 410 22 428 28" class="swatch-gloss" />
+            </svg>
+            <span class="swatch-name">Plush · Terracotta</span>
+          </li>
+          <li class="swatch swatch-light">
+            <svg viewBox="0 0 460 78" aria-hidden="true">
+              <path d="M12 36 C10 18 50 12 120 16 C200 20 280 12 360 20 C420 26 452 34 440 46 C428 58 380 62 320 62 C240 62 180 66 110 66 C56 68 16 60 12 44 Z" fill="url(#g3)" filter="url(#swatchRough)" />
+              <path d="M44 26 C120 20 230 24 330 22 C380 21 410 22 428 28" class="swatch-gloss" />
+            </svg>
+            <span class="swatch-name">Satin · Mauve</span>
+          </li>
+          <li class="swatch swatch-light">
+            <svg viewBox="0 0 460 78" aria-hidden="true">
+              <path d="M14 44 C10 20 40 10 96 14 C170 20 250 8 340 12 C400 14 440 12 448 30 C456 48 436 64 392 64 C320 66 250 60 170 64 C100 68 50 70 28 62 C16 58 15 52 14 44 Z" fill="url(#g4)" filter="url(#swatchRough)" />
+              <path d="M44 26 C120 20 230 24 330 22 C380 21 410 22 428 28" class="swatch-gloss" />
+            </svg>
+            <span class="swatch-name">Glass · Lychee</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Right Sign-In Panel -->
+      <main class="login-panel">
+        <div class="login-box">
+          <img class="login-mark" src="./assets/images/3.png" alt="B." />
+          <p class="eyebrow">Inventory admin</p>
+          <h1>Welcome back</h1>
+          <p class="muted login-lead">Sign in to your account to manage products, stock and reports.</p>
+          <form id="loginForm">
+            <label>Email address
+              <span class="field">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="m4 8 8 5.5L20 8" /></svg>
+                <input id="emailInput" type="email" placeholder="Enter your email" autocomplete="email" required />
+              </span>
+            </label>
+            <label>Password
+              <span class="field password-field">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="3" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" /></svg>
+                <input id="passwordInput" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+                <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password" aria-pressed="false">Show</button>
+              </span>
+            </label>
+            <button class="button primary" type="submit">Sign in</button>
+          </form>
+          <p class="login-note small muted center">
+            <svg class="note-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="3" /><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" /></svg>
+            Authorized Bare Beauty staff only
+          </p>
+        </div>
+        <p class="login-copy small muted">&copy; 2026 Bare Beauty &middot; Inventory Management System</p>
+      </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. MAIN APPLICATION VIEW                   -->
+    <!-- ========================================== -->
+    <div id="appView" class="app-view hidden">
+      <a class="skip-link" href="#main">Skip to main content</a>
+      
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-lockup sidebar-brand">
+          <span class="b-logo-slot sidebar-logo">
+            <img src="./assets/images/4.png" alt="B." />
+          </span>
+          <strong>Bare Beauty</strong>
+        </div>
+        <p class="sidebar-label">Workspace</p>
+        <nav id="mainNav" class="main-nav" aria-label="Main">
+          <button class="nav-item active" data-page="dashboard" aria-current="page">
+            <span aria-hidden="true">◈</span> <span>Overview</span>
+          </button>
+          <button class="nav-item" data-page="inventory">
+            <span aria-hidden="true">▦</span> <span>Inventory</span>
+          </button>
+          <button class="nav-item" data-page="categories">
+            <span aria-hidden="true">◌</span> <span>Categories</span>
+          </button>
+          <button class="nav-item" data-page="history">
+            <span aria-hidden="true">☷</span> <span>Movement History</span>
+          </button>
+          <button class="nav-item" data-page="reports">
+            <span aria-hidden="true">▥</span> <span>Reports</span>
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="admin-chip">
+            <span class="avatar">AV</span>
+            <span><strong id="userDisplayName">Aveghail</strong><small id="userRoleName">Inventory admin</small></span>
+          </div>
+          <button id="logoutButton" class="nav-item" data-action="signout">
+            <span aria-hidden="true">↪</span> <span>Sign out</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content" id="main" tabindex="-1">
+        <!-- Sticky Topbar Header -->
+        <header class="topbar">
+          <div>
+            <h2 id="pageHeading" tabindex="-1">Dashboard</h2>
+          </div>
+          <div class="topbar-actions">
+            <span class="system-status" id="headerStatus">
+              <i aria-hidden="true"></i> <span id="headerStatusText">Checking stock levels…</span>
+            </span>
+            <button id="mobileMenuButton" class="icon-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">☰</button>
+          </div>
+        </header>
+
+        <!-- SPA Page Sections -->
+        <section id="dashboardPage" class="page"></section>
+        <section id="inventoryPage" class="page hidden"></section>
+        <section id="categoriesPage" class="page hidden"></section>
+        <section id="historyPage" class="page hidden"></section>
+        <section id="reportsPage" class="page hidden"></section>
+      </main>
+    </div>
+
+    <!-- Modal Root & Toast Containers -->
+    <div id="modalRoot"></div>
+    <div id="toastRoot" class="toast-root" role="status" aria-live="polite"></div>
+
+    <!-- ========================================== -->
+    <!-- 3. MODULAR JAVASCRIPT ARCHITECTURE         -->
+    <!-- ========================================== -->
+    <!-- Core Layer -->
+    <script src="./js/core/config.js"></script>
+    <script src="./js/core/state.js"></script>
+    <script src="./js/core/utils.js"></script>
+
+    <!-- Data Access Layer -->
+    <script src="./js/data/mock-data.js"></script>
+    <script src="./js/data/storage.js"></script>
+    <script src="./js/data/api.js"></script>
+
+    <!-- UI Components Layer -->
+    <script src="./js/ui/navigation.js"></script>
+    <script src="./js/ui/modals.js"></script>
+
+    <!-- Feature Modules Layer -->
+    <script src="./js/modules/auth.js"></script>
+    <script src="./js/modules/dashboard.js"></script>
+    <script src="./js/modules/inventory.js"></script>
+    <script src="./js/modules/categories.js"></script>
+    <script src="./js/modules/history.js"></script>
+    <script src="./js/modules/reports.js"></script>
+
+    <!-- Supabase SDK (must load BEFORE service files that use it) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Supabase Services (depend on SDK above) -->
+    <script src="./js/services/supabase-client.js"></script>
+    <script src="./js/services/auth-service.js"></script>
+    <script src="./js/services/product-service.js"></script>
+    <script src="./js/services/stock-service.js"></script>
+    <script src="./js/services/report-service.js"></script>
+
+    <!-- Main Application Bootstrap -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

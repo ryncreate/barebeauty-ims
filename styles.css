@@ -1,0 +1,10 @@
+/* =====================================================================
+   BARE BEAUTY INVENTORY MANAGEMENT SYSTEM (IMS)
+   Master Stylesheet (Loads all modular CSS components)
+   ===================================================================== */
+
+@import "base.css";
+@import "layout.css";
+@import "components.css";
+@import "login.css";
+@import "pages.css";
